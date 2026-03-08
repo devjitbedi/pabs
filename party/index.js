@@ -101,6 +101,7 @@ export default class GameServer {
       s.wasteDrawPending = null
       s.wastePile = []
       s.status = 'active'
+      s.escapeCounter = 0
       s.lastResolvedTrick = null
       s.lastResolvedTrickSuit = null
       s.lastResolvedPickupPlayerId = null
@@ -155,6 +156,7 @@ export default class GameServer {
         isFirstTrick: true,
         bhaabi: null,
         wasteDrawPending: null,
+        escapeCounter: 0,
         turnStartedAt: null,
         endingStartedAt: null,
         lastResolvedTrick: null,
@@ -286,7 +288,8 @@ function resolveTrickState(s) {
             s.wasteDrawPending = result.winner
           } else {
             // Waste pile empty → winner escapes
-            s.players[winnerIdx] = { ...winner, hasEscaped: true }
+            s.escapeCounter = (s.escapeCounter || 0) + 1
+            s.players[winnerIdx] = { ...winner, hasEscaped: true, escapeOrder: s.escapeCounter }
             const next = getNextPlayer(s.players, winner.seatOrder)
             s.currentTurn = next ? next.id : null
           }
@@ -322,12 +325,16 @@ function resolveTrickState(s) {
   // Auto-escape any player whose hand is now empty.
   // Exclude the wasteDrawPending player — their hand is intentionally empty
   // while they wait to tap their mystery card.
-  s.players = s.players.map(p => {
-    if (!p.hasEscaped && p.hand.length === 0 && s.wasteDrawPending !== p.id) {
-      return { ...p, hasEscaped: true }
-    }
-    return p
-  })
+  // Process in seatOrder so simultaneous escapes in the same trick get
+  // a consistent, deterministic escapeOrder.
+  const toAutoEscape = s.players
+    .filter(p => !p.hasEscaped && p.hand.length === 0 && s.wasteDrawPending !== p.id)
+    .sort((a, b) => a.seatOrder - b.seatOrder)
+  for (const p of toAutoEscape) {
+    const idx = s.players.findIndex(pp => pp.id === p.id)
+    s.escapeCounter = (s.escapeCounter || 0) + 1
+    s.players[idx] = { ...s.players[idx], hasEscaped: true, escapeOrder: s.escapeCounter }
+  }
 
   // If the next-to-play player has already escaped, skip past them
   const currentPlayer = s.players.find(p => p.id === s.currentTurn)

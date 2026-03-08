@@ -39,7 +39,7 @@ export default function ResultScreen({ state, dispatch, myPlayerId }) {
   const bhaabi = state.players.find(p => p.id === state.bhaabi)
   const escapees = state.players.filter(p => p.hasEscaped)
   const sorted = [
-    ...escapees.sort((a, b) => a.seatOrder - b.seatOrder),
+    ...escapees.sort((a, b) => (a.escapeOrder || 0) - (b.escapeOrder || 0)),
     ...(bhaabi ? [bhaabi] : []),
   ]
 
