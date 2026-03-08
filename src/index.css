@@ -1,0 +1,141 @@
+:root {
+  --ink:        #0f0d0b;
+  --gold:       #c8973a;
+  --gold-light: #e8b84b;
+  --gold-pale:  rgba(200,151,58,0.1);
+  --paper:      #f0ebe0;
+  --cream:      #f6f2eb;
+  --muted:      #6a6560;
+  --dim:        #4a4540;
+  --green:      #5a9a72;
+  --red-suit:   #b0302a;
+  --red-alert:  #c04a40;
+  --border:     rgba(255,255,255,0.05);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+}
+
+body {
+  background: var(--ink);
+  font-family: 'Instrument Sans', sans-serif;
+  color: var(--paper);
+  -webkit-text-size-adjust: 100%;
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+input, button {
+  font-family: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(1.5px); }
+}
+
+@keyframes throb {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cardFlip {
+  0%   { transform: perspective(500px) rotateY(110deg) scale(0.9); opacity: 0; }
+  55%  { transform: perspective(500px) rotateY(-18deg) scale(1.04); opacity: 1; }
+  100% { transform: perspective(500px) rotateY(0deg) scale(1); opacity: 1; }
+}
+
+@keyframes cardTochoo {
+  0%   { transform: perspective(400px) rotateY(110deg) translateY(-22px) scale(0.82); opacity: 0; }
+  28%  { transform: perspective(400px) rotateY(-32deg) translateY(7px) scale(1.13); opacity: 1; }
+  48%  { transform: perspective(400px) rotateY(12deg) translateY(-3px) scale(0.97); opacity: 1; }
+  68%  { transform: perspective(400px) rotateY(-5deg) translateY(1px) scale(1.02); opacity: 1; }
+  100% { transform: perspective(400px) rotateY(0deg) translateY(0) scale(1); opacity: 1; }
+}
+
+@keyframes tochooGlow {
+  0%   { box-shadow: 0 0 0 0 rgba(192,74,64,0); }
+  25%  { box-shadow: 0 0 22px 8px rgba(192,74,64,0.6); }
+  100% { box-shadow: 0 0 4px 0 rgba(192,74,64,0); }
+}
+
+@keyframes screenShake {
+  0%   { transform: translateX(0); }
+  14%  { transform: translateX(-8px); }
+  28%  { transform: translateX(7px); }
+  42%  { transform: translateX(-5px); }
+  57%  { transform: translateX(4px); }
+  71%  { transform: translateX(-2px); }
+  85%  { transform: translateX(1px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes cardExit {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(120vw); }
+}
+
+@keyframes cardFlyDown {
+  from { transform: translateY(0); }
+  to   { transform: translateY(500px); }
+}
+
+@keyframes cardFlyUp {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-500px); }
+}
+
+@keyframes countBump {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+
+@keyframes cardEnter {
+  0%   { transform: translateX(-120vw); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes cardSlideDown {
+  from { transform: translateY(-140px); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(-6px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateX(-50%) translateY(0); }
+  to { opacity: 0; transform: translateX(-50%) translateY(-6px); }
+}
