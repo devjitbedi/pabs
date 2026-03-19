@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { generateGameId, generatePlayerId } from '../engine/gameLogic'
 
@@ -53,6 +53,10 @@ export default function HomeScreen() {
   const [nameFocused, setNameFocused] = useState(false)
   const [gameFocused, setGameFocused] = useState(false)
   const navigate = useNavigate()
+
+  useEffect(() => {
+    document.title = 'Create a Game · Pabs'
+  }, [])
 
   const canContinue = hostName.trim().length > 0
   const canCreate = gameName.trim().length > 0

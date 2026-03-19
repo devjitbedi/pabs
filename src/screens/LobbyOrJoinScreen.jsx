@@ -28,6 +28,9 @@ export default function LobbyOrJoinScreen() {
       const msg = JSON.parse(event.data)
       if (msg.type !== 'STATE_UPDATE') return
       setState(msg.state)
+      if (msg.state?.gameName) {
+        document.title = `${msg.state.gameName} · Pabs`
+      }
       if (msg.state.status === 'active') {
         navigate(`/${gameId}/game`, { replace: true })
       }

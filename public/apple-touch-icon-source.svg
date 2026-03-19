@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%"   stop-color="#3a2208"/>
+      <stop offset="40%"  stop-color="#1c1106"/>
+      <stop offset="100%" stop-color="#080604"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#bg)"/>
+
+  <!-- Wordmark -->
+  <text x="256" y="296"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-style="italic"
+    font-size="188"
+    font-weight="normal"
+    text-anchor="middle"
+    fill="#f0ebe0">Pabs</text>
+</svg>

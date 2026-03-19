@@ -87,6 +87,10 @@ export default function GameScreen({ state, dispatch, myPlayerId }) {
 
   const amIHost = state?.players?.find(p => p.isHost)?.id === myPlayerId
 
+  useEffect(() => {
+    if (state?.gameName) document.title = `${state.gameName} · Pabs`
+  }, [state?.gameName])
+
   // Unified effect: detect trick resolution, phase the animation, delay toast
   useEffect(() => {
     if (!state) return

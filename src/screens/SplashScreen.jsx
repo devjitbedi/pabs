@@ -1,7 +1,12 @@
+import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function SplashScreen() {
   const navigate = useNavigate()
+
+  useEffect(() => {
+    document.title = 'Pabs — The Modern Bhabhi Card Game'
+  }, [])
 
   return (
     <div style={{

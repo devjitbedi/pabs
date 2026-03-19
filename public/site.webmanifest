@@ -1,0 +1,24 @@
+{
+  "name": "Pabs — The Modern Bhabhi Card Game",
+  "short_name": "Pabs",
+  "description": "The modern multiplayer version of Bhabhi. Play with 3 to 8 friends on any device.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0d0b",
+  "theme_color": "#0f0d0b",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

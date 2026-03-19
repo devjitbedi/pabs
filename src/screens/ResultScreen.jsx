@@ -8,6 +8,10 @@ export default function ResultScreen({ state, dispatch, myPlayerId }) {
   const amIBhaabi = state?.bhaabi === myPlayerId
 
   useEffect(() => {
+    document.title = `Results · Pabs`
+  }, [])
+
+  useEffect(() => {
     if (!state || state.status !== 'finished') return
     const interval = setInterval(() => {
       setCountdown(prev => {
