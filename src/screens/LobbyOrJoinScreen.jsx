@@ -8,6 +8,11 @@ export default function LobbyOrJoinScreen() {
   const { gameId } = useParams()
   const navigate = useNavigate()
 
+  // Set a sensible title immediately for game URLs, before state loads
+  useEffect(() => {
+    document.title = 'Join a Game · Pabs'
+  }, [])
+
   // Read sessionStorage ONCE at mount — stable for component lifetime
   const isHost = useRef(sessionStorage.getItem(`pabs-host-${gameId}`) === 'true').current
   const mountPlayerId = useRef(sessionStorage.getItem(`pabs-player-${gameId}`)).current

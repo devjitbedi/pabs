@@ -88,7 +88,7 @@ export default function LobbyScreen({ state, dispatch, isHost, myPlayerId }) {
   const handleInvite = async () => {
     const url = window.location.href
     if (navigator.share) {
-      try { await navigator.share({ title: 'Pabs', text: 'Join my game!', url }) } catch (e) {}
+      try { await navigator.share({ title: `Join ${state.gameName} on Pabs`, url }) } catch (e) {}
     } else {
       await navigator.clipboard.writeText(url)
       setCopiedToast(true)
