@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pabs.vercel.app/sitemap.xml
+Sitemap: https://playpabs.vercel.app/sitemap.xml
