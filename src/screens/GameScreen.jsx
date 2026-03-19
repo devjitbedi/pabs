@@ -17,7 +17,7 @@ function buildToastMessage(prevState, nextState, myPlayerId) {
         const isMe = bhaabi.id === myPlayerId
         const label = isMe ? 'You' : bhaabi.name
         const verb = isMe ? 'are' : 'is'
-        return `<span style="color:var(--red-alert);font-weight:700">${label}</span> ${verb} the Bhaabi!`
+        return `<span style="color:var(--red-alert);font-weight:700">${label}</span> ${verb} the Bhabhi!`
       }
     }
 

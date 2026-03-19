@@ -343,7 +343,7 @@ function resolveTrickState(s) {
     s.currentTurn = next ? next.id : null
   }
 
-  // Check win condition (last non-escaped active player is Bhaabi)
+  // Check win condition (last non-escaped active player is Bhabhi)
   const { gameOver, loser } = checkWinCondition(s.players)
   if (gameOver) {
     s.status = 'finished'

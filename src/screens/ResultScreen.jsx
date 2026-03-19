@@ -99,7 +99,7 @@ export default function ResultScreen({ state, dispatch, myPlayerId }) {
           textTransform: 'uppercase',
           color: amIBhaabi ? 'var(--red-alert)' : 'var(--green)',
         }}>
-          {amIBhaabi ? "You're the Bhaabi" : 'You Escaped'}
+          {amIBhaabi ? "You're the Bhabhi" : 'You Escaped'}
         </div>
 
         {/* Main headline */}
@@ -140,7 +140,7 @@ export default function ResultScreen({ state, dispatch, myPlayerId }) {
                 : 'none'
 
             // Status pill label — merge "You ·" prefix when it's me
-            const statusLabel = (isMe ? 'You · ' : '') + (isBhaabi ? 'Bhaabi' : 'Escaped')
+            const statusLabel = (isMe ? 'You · ' : '') + (isBhaabi ? 'Bhabhi' : 'Escaped')
 
             return (
               <div key={player.id} style={{

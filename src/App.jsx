@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import SplashScreen from './screens/SplashScreen'
 import HomeScreen from './screens/HomeScreen'
 import LobbyOrJoinScreen from './screens/LobbyOrJoinScreen'
 import GameRoute from './screens/GameRoute'
@@ -10,7 +11,8 @@ export default function App() {
     <ErrorBoundary>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomeScreen />} />
+          <Route path="/" element={<SplashScreen />} />
+          <Route path="/host" element={<HomeScreen />} />
           <Route path="/:gameId" element={<LobbyOrJoinScreen />} />
           <Route path="/:gameId/game" element={<GameRoute />} />
           <Route path="/:gameId/result" element={<ResultRoute />} />
