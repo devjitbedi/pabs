@@ -82,7 +82,7 @@ export default function SplashScreen() {
 
       {/* ── Footer ───────────────────────────────────────────────────────── */}
       <div style={{
-        padding: '20px 32px calc(env(safe-area-inset-bottom) + 8px)',
+        padding: '20px 32px max(20px, calc(env(safe-area-inset-bottom) + 8px))',
         display: 'flex',
         flexDirection: 'column',
         gap: 12,
