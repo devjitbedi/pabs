@@ -282,7 +282,7 @@ export default function JoinScreen({ gameId, onJoin, preloadedState }) {
           <div style={{ height: 1, background: 'rgba(255,255,255,0.05)' }} />
 
           {/* Footer */}
-          <div style={{ padding: '20px 32px max(20px, calc(env(safe-area-inset-bottom) + 8px))' }}>
+          <div style={{ padding: '20px 32px max(16px, env(safe-area-inset-bottom))' }}>
             <GoldButton disabled={false} onClick={() => setStep(2)}>
               Join game
             </GoldButton>
@@ -391,7 +391,7 @@ export default function JoinScreen({ gameId, onJoin, preloadedState }) {
           <div style={{ height: 1, background: 'rgba(255,255,255,0.05)' }} />
 
           {/* Footer */}
-          <div style={{ padding: '20px 32px max(20px, calc(env(safe-area-inset-bottom) + 8px))' }}>
+          <div style={{ padding: '20px 32px max(16px, env(safe-area-inset-bottom))' }}>
             <GoldButton disabled={!canJoin} onClick={handleJoin}>
               Join game
             </GoldButton>

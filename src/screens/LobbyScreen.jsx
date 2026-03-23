@@ -319,7 +319,7 @@ export default function LobbyScreen({ state, dispatch, isHost, myPlayerId }) {
       </div>
 
       {/* ── Footer ───────────────────────────────────────────────────────── */}
-      <div style={{ padding: '24px 32px max(20px, calc(env(safe-area-inset-bottom) + 8px))', display: 'flex', flexDirection: 'column', gap: 14 }}>
+      <div style={{ padding: '24px 32px max(16px, env(safe-area-inset-bottom))', display: 'flex', flexDirection: 'column', gap: 14 }}>
 
         {/* Status line */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 12 }}>
