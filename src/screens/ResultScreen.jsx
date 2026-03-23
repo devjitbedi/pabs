@@ -62,6 +62,7 @@ export default function ResultScreen({ state, dispatch, myPlayerId }) {
       display: 'flex',
       flexDirection: 'column',
       padding: '0 24px',
+      paddingTop: 'env(safe-area-inset-top)',
       paddingBottom: 'env(safe-area-inset-bottom, 20px)',
       background: 'var(--ink)',
       position: 'relative',

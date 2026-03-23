@@ -18,7 +18,7 @@ export default function SplashScreen() {
 
       {/* ── Top bar ──────────────────────────────────────────────────────── */}
       <div style={{
-        padding: '52px 32px 0',
+        padding: 'calc(env(safe-area-inset-top) + 16px) 32px 0',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-end',
@@ -82,7 +82,7 @@ export default function SplashScreen() {
 
       {/* ── Footer ───────────────────────────────────────────────────────── */}
       <div style={{
-        padding: '20px 32px 44px',
+        padding: '20px 32px calc(env(safe-area-inset-bottom) + 20px)',
         display: 'flex',
         flexDirection: 'column',
         gap: 12,

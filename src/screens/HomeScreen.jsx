@@ -125,7 +125,7 @@ export default function HomeScreen() {
 
       {/* ── Top bar ──────────────────────────────────────────────────────── */}
       <div style={{
-        padding: '52px 32px 0',
+        padding: 'calc(env(safe-area-inset-top) + 16px) 32px 0',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -336,7 +336,7 @@ export default function HomeScreen() {
       <div style={{ height: 1, background: 'rgba(255,255,255,0.05)' }} />
 
       {/* ── Footer ───────────────────────────────────────────────────────── */}
-      <div style={{ padding: '20px 32px 44px', display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <div style={{ padding: '20px 32px calc(env(safe-area-inset-bottom) + 20px)', display: 'flex', flexDirection: 'column', gap: 12 }}>
         {step === 1 ? (
           <GoldButton disabled={!canContinue} onClick={() => setStep(2)}>
             Continue

@@ -124,7 +124,7 @@ export default function LobbyScreen({ state, dispatch, isHost, myPlayerId }) {
     }}>
 
       {/* ── Top section ──────────────────────────────────────────────────── */}
-      <div style={{ padding: '52px 32px 0' }}>
+      <div style={{ padding: 'calc(env(safe-area-inset-top) + 16px) 32px 0' }}>
         {/* #6 — "Pabs · [game code]" — click to copy link */}
         <div
           onClick={handleCopyCode}
@@ -319,7 +319,7 @@ export default function LobbyScreen({ state, dispatch, isHost, myPlayerId }) {
       </div>
 
       {/* ── Footer ───────────────────────────────────────────────────────── */}
-      <div style={{ padding: '24px 32px 44px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+      <div style={{ padding: '24px 32px calc(env(safe-area-inset-bottom) + 20px)', display: 'flex', flexDirection: 'column', gap: 14 }}>
 
         {/* Status line */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 12 }}>

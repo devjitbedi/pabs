@@ -232,7 +232,7 @@ export default function GameScreen({ state, dispatch, myPlayerId }) {
 
       {/* ── Host controls: ⋯ circle button ─────────────────────────────── */}
       {amIHost && (
-        <div style={{ position: 'absolute', top: 8, right: 8, zIndex: 100 }}>
+        <div style={{ position: 'absolute', top: 'calc(env(safe-area-inset-top) + 8px)', right: 8, zIndex: 100 }}>
           <button
             onClick={(e) => { e.stopPropagation(); setMenuOpen(prev => !prev) }}
             style={{
